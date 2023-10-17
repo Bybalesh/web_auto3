@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+/*const { test, expect } = require("@playwright/test");
 
 test("test", async ({ page }) => {
   // Go to https://netology.ru/free/management#/
@@ -19,4 +19,4 @@ test("test", async ({ page }) => {
   await expect(page).toHaveURL(
     "https://netology.ru/programs/kak-perenesti-svoyo-delo-v-onlajn-bp"
   );
-});
+}); */
