@@ -1,0 +1,28 @@
+/node_modules/
+
+.DS_Store
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Visual Studio Code
+.vscode/
+.vscode-test/
+.history/
+
+# User-specific files
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+.user.js
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/e2e/
+/tests-examples/
