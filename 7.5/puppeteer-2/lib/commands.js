@@ -8,10 +8,10 @@ module.exports = {
 		}
 	},
 	
-	buttonIsEnabled: async function(page, buttonSelector, nameAtribute){
-		const isDisabled = await page.$eval(buttonSelector,(element, atrib) => {
-			return element.getAttribute(atrib) !==null;
-		}, nameAtribute);
+	isButtonEnabled: async function (page, buttonSelector, attributeName){
+		const isDisabled = await page.$eval(buttonSelector,(element, attr) => {
+			return element.getAttribute(attr) !==null;
+		}, attributeName);
 		return isDisabled;
 		},
 
