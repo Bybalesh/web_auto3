@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const expect = require("chai");
+var {expect} = require('chai');
 const { Given, When, Then, Before, After } = require("cucumber");
 const { getText, clickElement, isButtonEnabled } = require("../../lib/commands.js");
 
@@ -29,12 +29,9 @@ When("user chooses a ticket", async function () {
 	await clickElement(this.page, '.buying-scheme__wrapper > div:nth-child(7) > span:nth-child(5)');
 });
 Then("the booking button for single ticket should be enabled", async function () {
-	//await this.page.waitForTimeout(10000);
 	const isButtonActive = await isButtonEnabled(this.page, 'main > section > button', 'disabled');
-	//await this.page.waitForTimeout(10000);
 	expect(isButtonActive).to.be.false;
-	//await this.page.waitForTimeout(10000);
-});
+	});
 
 When("user chooses multiple tickets", async function () {
 	await clickElement(this.page, 'nav > a:nth-child(3)');
@@ -44,7 +41,6 @@ When("user chooses multiple tickets", async function () {
 	await clickElement(this.page, '.buying-scheme__wrapper > div:nth-child(1) > span:nth-child(5)');
 });
 Then("the booking button should be enabled", async function () {
-	//await this.page.waitForTimeout(10000);
 	const isButtonActive = await isButtonEnabled(this.page, 'main > section > button', 'disabled');
 	expect(isButtonActive).to.be.false;
 });
@@ -52,11 +48,10 @@ Then("the booking button should be enabled", async function () {
 When("user chooses a booked ticket", async function () {
 	await clickElement(this.page, 'nav > a:nth-child(2)');
 	await clickElement(this.page, 'main > section:nth-child(3) > div:nth-child(3) > ul > li > a');
-	await page.waitForSelector('main > section > div.buying-scheme > div.buying-scheme__wrapper');
-	await clickElement(this.page, '.buying-scheme__wrapper > div:nth-child(8) > span.buying-scheme__chair.buying-scheme__chair_standart.buying-scheme__chair_taken');
+	await this.page.waitForSelector('main > section > div.buying-scheme > div.buying-scheme__wrapper');
+	await clickElement(this.page, '.buying-scheme__wrapper > div:nth-child(5) > span.buying-scheme__chair.buying-scheme__chair_vip.buying-scheme__chair_taken');
 });
 Then("the booking button should be disabled", async function () {
-	//await this.page.waitForTimeout(10000);
 	const isButtonActive = await isButtonEnabled(this.page, 'main > section > button', 'disabled');
 	expect(isButtonActive).to.be.true;
 });

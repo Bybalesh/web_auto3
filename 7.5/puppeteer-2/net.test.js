@@ -37,7 +37,7 @@ describe("ticket reservations tests", () => {
 		await clickElement(page, 'nav > a:nth-child(2)');
 		await clickElement(page, 'main > section:nth-child(3) > div:nth-child(3) > ul > li > a');
 		await page.waitForSelector('main > section > div.buying-scheme > div.buying-scheme__wrapper');
-		await clickElement(page, '.buying-scheme__wrapper > div:nth-child(8) > span.buying-scheme__chair.buying-scheme__chair_standart.buying-scheme__chair_taken');
+		await clickElement(page, '.buying-scheme__wrapper > div:nth-child(5) > span.buying-scheme__chair.buying-scheme__chair_vip.buying-scheme__chair_taken');
 		const isButtonActive = await buttonIsEnabled(page, 'main > section > button', 'disabled');
 		expect(isButtonActive).to.be.true;
 	});
